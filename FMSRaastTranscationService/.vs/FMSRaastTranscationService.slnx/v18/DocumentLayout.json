@@ -1,0 +1,247 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\services\\servicerun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\services\\servicerun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\services\\commonmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\services\\commonmethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\helpers\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\helpers\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\raastsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\raastsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\helpers\\transactionvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\helpers\\transactionvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\helpers\\decryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\helpers\\decryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\fmsraasttranscationservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\fmsraasttranscationservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\parameter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\parameter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\parametercriteriasviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\parametercriteriasviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\parametervalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\parametervalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|d:\\moiz\\.netproject\\workerservices\\fms\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\ruleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\ruleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Decryption.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\Decryption.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Helpers\\Decryption.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\Decryption.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Helpers\\Decryption.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T04:21:10.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\Logger.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Helpers\\Logger.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\Logger.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Helpers\\Logger.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAowEgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T04:07:02.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CommonMethods.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Services\\CommonMethods.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Services\\CommonMethods.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Services\\CommonMethods.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Services\\CommonMethods.cs",
+              "ViewState": "AgIAADcBAAAAAAAAAAAWwEwBAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:27:33.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Worker.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Worker.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Worker.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Worker.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Worker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:22:33.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RaastSettings.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RaastSettings.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\RaastSettings.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RaastSettings.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Models\\RaastSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:20:14.157Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\appsettings.json",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\appsettings.json",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\appsettings.json",
+              "RelativeToolTip": "FMSRaastTranscationService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-15T11:17:56.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceRun.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Services\\ServiceRun.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Services\\ServiceRun.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Services\\ServiceRun.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Services\\ServiceRun.cs",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAWwLEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:13:37.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Program.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Program.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Program.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:20:44.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TransactionValidator.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\TransactionValidator.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Helpers\\TransactionValidator.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\TransactionValidator.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Helpers\\TransactionValidator.cs",
+              "ViewState": "AgIAANwDAAAAAAAAAAAuwMcDAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:47:48.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Parameter.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\Parameter.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\Parameter.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\Parameter.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Models\\Parameter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:15:42.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ParameterCriteriasViewModel.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\ParameterCriteriasViewModel.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\ParameterCriteriasViewModel.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\ParameterCriteriasViewModel.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Models\\ParameterCriteriasViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:16:14.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ParameterValue.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\ParameterValue.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\ParameterValue.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\ParameterValue.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Models\\ParameterValue.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:16:17.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RuleViewModel.cs",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RuleViewModel.cs",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\RuleViewModel.cs",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RuleViewModel.cs",
+              "RelativeToolTip": "FMSRaastTranscationService\\Models\\RuleViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-15T11:16:19.856Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FMSRaastTranscationService.csproj",
+              "DocumentMoniker": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\FMSRaastTranscationService.csproj",
+              "RelativeDocumentMoniker": "FMSRaastTranscationService\\FMSRaastTranscationService.csproj",
+              "ToolTip": "D:\\Moiz\\.NetProject\\WorkerServices\\FMS\\FMSRaastTranscationService\\FMSRaastTranscationService\\FMSRaastTranscationService.csproj",
+              "RelativeToolTip": "FMSRaastTranscationService\\FMSRaastTranscationService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-15T11:14:13.122Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
