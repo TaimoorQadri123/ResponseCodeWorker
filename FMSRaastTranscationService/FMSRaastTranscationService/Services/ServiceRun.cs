@@ -93,8 +93,6 @@ namespace FMSRaastTranscationService.Services
                 if (!modifiedPoints.IsSeeded)
                 {
                     Logger.Simple("System Not Seeded. Loading Transactions...");
-                    //Logger.Simple($"ModifiedOn: {modifiedPoints.ModifiedOn:O}");
-                    //Logger.Simple($"Previous DateTime: {this.previous_datetime}");
                     completeTrans = GetDataSetFullTrans();
                     Logger.Simple($"Transactions Fetched : {completeTrans.Rows.Count}");
                 }
