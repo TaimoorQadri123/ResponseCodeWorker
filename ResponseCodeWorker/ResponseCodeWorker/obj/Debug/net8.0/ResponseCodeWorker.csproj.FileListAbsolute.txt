@@ -87,3 +87,4 @@ C:\Users\muhammad.taimoor\source\repos\ResponseCodeWorker\ResponseCodeWorker\obj
 C:\Users\muhammad.taimoor\source\repos\ResponseCodeWorker\ResponseCodeWorker\obj\Debug\net8.0\ResponseCodeWorker.pdb
 C:\Users\muhammad.taimoor\source\repos\ResponseCodeWorker\ResponseCodeWorker\obj\Debug\net8.0\ResponseCodeWorker.genruntimeconfig.cache
 C:\Users\muhammad.taimoor\source\repos\ResponseCodeWorker\ResponseCodeWorker\obj\Debug\net8.0\ref\ResponseCodeWorker.dll
+C:\Users\muhammad.taimoor\source\repos\ResponseCodeWorker\ResponseCodeWorker\obj\Debug\net8.0\ResponseCodeWorker.sourcelink.json

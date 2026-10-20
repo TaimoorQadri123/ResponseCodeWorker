@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ResponseCodeWorker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0a9305365388e3c5125cbdba514db9065104e6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("ResponseCodeWorker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ResponseCodeWorker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

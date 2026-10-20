@@ -12,9 +12,6 @@ using System.Threading.Tasks;
 
 namespace ResponseCodeWorker
 {
-    // SERVICE 2: SrcTxn se data uthake do raston mein baantta hai:
-    //   ResponseCode NOT NULL -> LocalTxn
-    //   ResponseCode NULL     -> FailedTxn
     public class SyncWorker : BackgroundService
     {
         private readonly ILogger<SyncWorker> _logger;
@@ -33,7 +30,7 @@ namespace ResponseCodeWorker
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var interval = _config.GetValue<int>("WorkerSettings:SyncIntervalSeconds", 10);
-            var batchSize = _config.GetValue<int>("WorkerSettings:SyncBatchSize", 1000);
+            var batchSize = _config.GetValue<int>("WorkerSettings:SyncBatchSize", 5000);
 
             _logger.LogInformation("SyncWorker started. Every {i} seconds, max {b} rows per round.", interval, batchSize);
 
@@ -57,7 +54,7 @@ namespace ResponseCodeWorker
             using var scope = _scopeFactory.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<ResponseDbContext>();
 
-            // 1) Checkpoint padho (nahi hai to TranId = 0 ke saath banao)
+            // 1)Read Checkpoint (modify)
             var checkpoint = await db.ModifyPoints.OrderBy(x => x.Id).FirstOrDefaultAsync(ct);
 
             if (checkpoint == null)
@@ -70,7 +67,7 @@ namespace ResponseCodeWorker
 
             var lastTranId = checkpoint.TranId;
 
-            // 2) Source se naya data lo
+            // 2) data from Source 
             var newRows = await db.SrcTxns
                 .AsNoTracking()
                 .Where(x => x.TranId > lastTranId)
@@ -84,7 +81,7 @@ namespace ResponseCodeWorker
                 return;
             }
 
-            // 3) Do hisson mein baanto
+            // 3) divide in two partition 
             var validRows = newRows.Where(x => x.ResponseCode != null).ToList();
             var failedRows = newRows.Where(x => x.ResponseCode == null).ToList();
 
@@ -206,10 +203,10 @@ namespace ResponseCodeWorker
             {
                 t.Rows.Add(r.TranId, r.CustomerName, r.CardNumber, r.MerchantId, r.Channel,
                     r.Currency, r.Amount, r.Status,
-                    DBNull.Value,                              // ResponseCode NULL hi hai
+                    DBNull.Value,                             
                     (object?)r.Description ?? DBNull.Value,
                     r.CreatedAt,
-                    "ResponseCode is null");                   // FailureReason
+                    "ResponseCode is null");                  
             }
             return t;
         }

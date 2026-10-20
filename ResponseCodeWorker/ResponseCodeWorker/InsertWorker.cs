@@ -8,7 +8,7 @@ using ResponseCodeWorker.Models;
 
 namespace ResponseCodeWorker
 {
-    // SERVICE 1: SrcTxn mein dummy data. Har batch mein 5-6% rows ka ResponseCode NULL
+    // SERVICE 1: Dummy Data 
     public class InsertWorker : BackgroundService
     {
         private readonly ILogger<InsertWorker> _logger;
@@ -35,12 +35,12 @@ namespace ResponseCodeWorker
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var interval = _config.GetValue<int>("WorkerSettings:InsertIntervalSeconds", 10);
-            var batchSize = _config.GetValue<int>("WorkerSettings:InsertBatchSize", 100);
+            var batchSize = _config.GetValue<int>("WorkerSettings:InsertBatchSize", 1000);
 
             _logger.LogInformation("InsertWorker started. Every {i} seconds, {b} rows (5-6% NULL ResponseCode).", interval, batchSize);
 
             while (!stoppingToken.IsCancellationRequested)
-            {
+            { 
                 try
                 {
                     using var scope = _scopeFactory.CreateScope();

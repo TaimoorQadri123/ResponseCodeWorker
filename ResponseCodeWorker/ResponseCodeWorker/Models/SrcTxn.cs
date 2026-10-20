@@ -16,7 +16,7 @@ namespace ResponseCodeWorker.Models
         public string Currency { get; set; } = string.Empty;
         public decimal Amount { get; set; }
         public string Status { get; set; } = string.Empty;
-        public string? ResponseCode { get; set; }     // NULL ho sakta hai
+        public string? ResponseCode { get; set; }     
         public string? Description { get; set; }
         public DateTime CreatedAt { get; set; }
     }
