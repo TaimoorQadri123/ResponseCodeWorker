@@ -20,18 +20,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|c:\\users\\muhammad.taimoor\\source\\repos\\fmsraasttranscationservice\\fmsraasttranscationservice\\helpers\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\helpers\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|c:\\users\\muhammad.taimoor\\source\\repos\\fmsraasttranscationservice\\fmsraasttranscationservice\\helpers\\decryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\helpers\\decryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|c:\\users\\muhammad.taimoor\\source\\repos\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\raastsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\raastsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|c:\\users\\muhammad.taimoor\\source\\repos\\fmsraasttranscationservice\\fmsraasttranscationservice\\models\\ruleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE01D1CC-7B63-8F2D-7099-411EB99C9A4F}|FMSRaastTranscationService\\FMSRaastTranscationService.csproj|solutionrelative:fmsraasttranscationservice\\models\\ruleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,7 +78,7 @@
               "RelativeDocumentMoniker": "FMSRaastTranscationService\\Services\\ServiceRun.cs",
               "ToolTip": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Services\\ServiceRun.cs",
               "RelativeToolTip": "FMSRaastTranscationService\\Services\\ServiceRun.cs",
-              "ViewState": "AgIAABYBAAAAAAAAAAApwBsBAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAApwJYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-15T11:13:37.214Z",
               "EditorCaption": ""
@@ -106,43 +94,6 @@
               "ViewState": "AgIAADwCAAAAAAAAAAAvwM0BAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-15T11:27:33.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RuleViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RuleViewModel.cs",
-              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\RuleViewModel.cs",
-              "ToolTip": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RuleViewModel.cs",
-              "RelativeToolTip": "FMSRaastTranscationService\\Models\\RuleViewModel.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAzwAwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-15T11:16:19.856Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RaastSettings.cs",
-              "DocumentMoniker": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RaastSettings.cs",
-              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Models\\RaastSettings.cs",
-              "ToolTip": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Models\\RaastSettings.cs",
-              "RelativeToolTip": "FMSRaastTranscationService\\Models\\RaastSettings.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA1wB8AAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-15T11:20:14.157Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Decryption.cs",
-              "DocumentMoniker": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\Decryption.cs",
-              "RelativeDocumentMoniker": "FMSRaastTranscationService\\Helpers\\Decryption.cs",
-              "ToolTip": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Helpers\\Decryption.cs",
-              "RelativeToolTip": "FMSRaastTranscationService\\Helpers\\Decryption.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAkAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T04:21:10.851Z",
               "EditorCaption": ""
             }
           ]

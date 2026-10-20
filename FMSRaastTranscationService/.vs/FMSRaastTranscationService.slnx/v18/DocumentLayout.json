@@ -41,8 +41,7 @@
               "RelativeToolTip": "FMSRaastTranscationService\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-20T10:13:16.313Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-20T10:13:16.313Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "FMSRaastTranscationService\\Helpers\\Logger.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T04:07:02.154Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-16T04:07:02.154Z"
             },
             {
               "$type": "Document",
@@ -78,7 +76,7 @@
               "RelativeDocumentMoniker": "FMSRaastTranscationService\\Services\\ServiceRun.cs",
               "ToolTip": "C:\\Users\\muhammad.taimoor\\source\\repos\\FMSRaastTranscationService\\FMSRaastTranscationService\\Services\\ServiceRun.cs",
               "RelativeToolTip": "FMSRaastTranscationService\\Services\\ServiceRun.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAApwJYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAApwIMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-15T11:13:37.214Z",
               "EditorCaption": ""
@@ -93,8 +91,7 @@
               "RelativeToolTip": "FMSRaastTranscationService\\Services\\CommonMethods.cs",
               "ViewState": "AgIAADwCAAAAAAAAAAAvwM0BAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-15T11:27:33.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-15T11:27:33.812Z"
             }
           ]
         }

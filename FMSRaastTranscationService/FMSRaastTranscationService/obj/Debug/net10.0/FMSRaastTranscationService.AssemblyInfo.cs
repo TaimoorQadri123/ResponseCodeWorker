@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FMSRaastTranscationService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b857225508deb7c8d1b0ffe388eba039c7351eba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f69e97b2d9bd668542304231bfe3a8396e669648")]
 [assembly: System.Reflection.AssemblyProductAttribute("FMSRaastTranscationService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FMSRaastTranscationService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
