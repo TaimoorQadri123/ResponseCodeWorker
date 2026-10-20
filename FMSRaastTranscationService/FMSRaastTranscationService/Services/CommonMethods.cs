@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
 
 namespace FMSRaastService
 {
@@ -372,5 +373,432 @@ namespace FMSRaastService
                 throw ex;
             }
         }
+        // New Code In RAAST
+        public void DeleteFutureTransactions(long trxLogId)
+        {
+            try
+            {
+                Logger.Simple(
+                    $"Deleting Raast transactions after checkpoint: {trxLogId}");
+
+                string sqlQuery = $@"
+            DELETE FROM {LocalSchema}
+            WHERE TRANSACTION_LOG_ID > @TrxLogId;
+
+            DELETE FROM {LocalHistorySchema}
+            WHERE TRANSACTION_LOG_ID > @TrxLogId;";
+
+                using (SqlConnection connection =
+                       new SqlConnection(DefaultConnection))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command =
+                           new SqlCommand(sqlQuery, connection))
+                    {
+                        command.CommandTimeout = 0;
+
+                        command.Parameters.Add(
+                            "@TrxLogId",
+                            SqlDbType.BigInt).Value = trxLogId;
+
+                        int deletedRows = command.ExecuteNonQuery();
+
+                        Logger.Simple(
+                            $"Raast future transactions deleted. Rows affected: {deletedRows}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex, "DeleteFutureTransactions");
+                throw;
+            }
+        }
+        public async Task<List<string>> GetOldRechecks()
+        {
+            List<string> recheckTrxLogids = new List<string>();
+            DataTable dataTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(DefaultConnection))
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlCommand command = new SqlCommand(
+                        "SELECT DISTINCT TRXLOGID FROM Recheck_OnResponse",
+                        connection))
+                    {
+                        command.CommandTimeout = 30;
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            adapter.Fill(dataTable);
+                        }
+                    }
+                }
+
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    if (row["TRXLOGID"] != DBNull.Value)
+                    {
+                        recheckTrxLogids.Add(row["TRXLOGID"].ToString()!);
+                    }
+                }
+
+                Logger.Simple($"Old recheck transactions found: {recheckTrxLogids.Count}");
+
+                return recheckTrxLogids;
+            }
+            catch (Exception ex)
+            {
+                Logger.Simple($"GetOldRechecks error: {ex}");
+                throw;
+            }
+        }
+        //new code
+        public async Task RemoveOldRechecks(int timeoutSeconds)
+        {
+            try
+            {
+                using (SqlConnection connection =
+                       new SqlConnection(DefaultConnection))
+                {
+                    await connection.OpenAsync();
+
+                    const string query = @"
+                DELETE FROM Recheck_OnResponse
+                WHERE TRX_DATETIME <
+                    DATEADD(SECOND, -@TimeoutSeconds, GETDATE());";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.CommandTimeout = 0;
+                        command.Parameters.Add("@TimeoutSeconds", SqlDbType.Int)
+                            .Value = timeoutSeconds;
+
+                        int deleted = await command.ExecuteNonQueryAsync();
+
+                        Logger.Simple($"Old rechecks removed: {deleted}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex, "RemoveOldRechecks");
+                throw;
+            }
+        }
+
+        public async Task<string> RecheckTransactions(
+            string selectParams,
+            DataTable fetchedTransactions)
+        {
+            try
+            {
+                // Purane pending transactions ka response dobara check karein.
+                List<string> oldIds = await GetOldRechecks();
+
+                string oldIdsCsv = string.Join(",", oldIds);
+
+                await GetChangeofResponseCode(selectParams, oldIds);
+
+                // Nayi 056 response-code transactions ko recheck queue mein daalein.
+                if (fetchedTransactions.Rows.Count > 0 &&
+                    fetchedTransactions.Columns.Contains("RESP_CODE") &&
+                    fetchedTransactions.Columns.Contains("TRANSACTION_LOG_ID") &&
+                    fetchedTransactions.Columns.Contains("TIME_LOC_TRAN_DT"))
+                {
+                    DataRow[] rows = fetchedTransactions.AsEnumerable()
+                        .Where(row =>
+                            row["RESP_CODE"] != DBNull.Value &&
+                            row["RESP_CODE"].ToString() == "056")
+                        .ToArray();
+
+                    if (rows.Length > 0)
+                    {
+                        await InsertRecheckData(rows.CopyToDataTable());
+                    }
+                }
+
+                return oldIdsCsv;
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex, "RecheckTransactions");
+                throw;
+            }
+        }
+
+        public async Task GetChangeofResponseCode(
+            string selectParams,
+            List<string> transactionIds)
+        {
+            if (transactionIds.Count == 0)
+            {
+                Logger.Simple("No old recheck transactions found.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(selectParams))
+                throw new InvalidOperationException(
+                    "No Oracle select parameters available for recheck.");
+
+            try
+            {
+                using (OracleConnection connection =
+                       new OracleConnection(DataSourceConnection))
+                {
+                    await connection.OpenAsync();
+
+                    // Oracle IN clause ki 1000-item limit se neeche batches.
+                    const int batchSize = 900;
+
+                    for (int i = 0; i < transactionIds.Count; i += batchSize)
+                    {
+                        List<string> batch = transactionIds
+                            .Skip(i)
+                            .Take(batchSize)
+                            .ToList();
+
+                        string placeholders = string.Join(
+                            ",",
+                            Enumerable.Range(0, batch.Count)
+                                .Select(index => $":id{index}"));
+
+                        string query = $@"
+                    SELECT DISTINCT {selectParams}
+                    FROM {ServiceRun.Schema}
+                    WHERE TRAN_CODE IN
+                        ('00', '01', '44', '9017', '30', '73', '9011')
+                      AND RESP_CODE IN
+                        ('000', '001', '004', '014', '024',
+                         '025', '060', '094', '997')
+                      AND TRANSACTION_LOG_ID IN ({placeholders})
+                    ORDER BY TRANSACTION_LOG_ID ASC";
+
+                        using (OracleCommand command =
+                               new OracleCommand(query, connection))
+                        {
+                            command.CommandTimeout = 300;
+
+                            for (int j = 0; j < batch.Count; j++)
+                            {
+                                command.Parameters.Add(
+                                    $"id{j}",
+                                    OracleDbType.Int64
+                                ).Value = Convert.ToInt64(batch[j]);
+                            }
+
+                            DataTable updatedTransactions = new DataTable();
+
+                            using (OracleDataAdapter adapter =
+                                   new OracleDataAdapter(command))
+                            {
+                                adapter.Fill(updatedTransactions);
+                            }
+
+                            if (updatedTransactions.Rows.Count > 0)
+                            {
+                                await UpdateRecheckedTransactions(
+                                    updatedTransactions);
+                            }
+                        }
+
+                        Logger.Simple(
+                            $"Recheck batch processed: {(i / batchSize) + 1}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex, "GetChangeofResponseCode");
+                throw;
+            }
+        }
+
+        public async Task UpdateRecheckedTransactions(DataTable data)
+        {
+            if (!data.Columns.Contains("TRANSACTION_LOG_ID") ||
+                !data.Columns.Contains("RESP_CODE"))
+            {
+                throw new InvalidOperationException(
+                    "Oracle recheck result must contain TRANSACTION_LOG_ID and RESP_CODE.");
+            }
+
+            try
+            {
+                using (SqlConnection connection =
+                       new SqlConnection(DefaultConnection))
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlTransaction transaction =
+                           connection.BeginTransaction())
+                    {
+                        try
+                        {
+                            const string createQuery = @"
+                        CREATE TABLE #RecheckUpdates
+                        (
+                            TRANSACTION_LOG_ID BIGINT NOT NULL,
+                            RESP_CODE VARCHAR(50) NULL
+                        );";
+
+                            using (SqlCommand command = new SqlCommand(
+                                createQuery, connection, transaction))
+                            {
+                                await command.ExecuteNonQueryAsync();
+                            }
+
+                            DataTable updates = new DataTable();
+                            updates.Columns.Add(
+                                "TRANSACTION_LOG_ID", typeof(long));
+                            updates.Columns.Add("RESP_CODE", typeof(string));
+
+                            foreach (DataRow row in data.Rows)
+                            {
+                                DataRow newRow = updates.NewRow();
+                                newRow["TRANSACTION_LOG_ID"] =
+                                    Convert.ToInt64(row["TRANSACTION_LOG_ID"]);
+
+                                newRow["RESP_CODE"] =
+                                    row["RESP_CODE"] == DBNull.Value
+                                        ? DBNull.Value
+                                        : row["RESP_CODE"].ToString();
+
+                                updates.Rows.Add(newRow);
+                            }
+
+                            using (SqlBulkCopy bulkCopy = new SqlBulkCopy(
+                                connection,
+                                SqlBulkCopyOptions.Default,
+                                transaction))
+                            {
+                                bulkCopy.DestinationTableName = "#RecheckUpdates";
+                                bulkCopy.ColumnMappings.Add(
+                                    "TRANSACTION_LOG_ID", "TRANSACTION_LOG_ID");
+                                bulkCopy.ColumnMappings.Add(
+                                    "RESP_CODE", "RESP_CODE");
+
+                                await bulkCopy.WriteToServerAsync(updates);
+                            }
+
+                            string updateQuery = $@"
+                        UPDATE target
+                        SET target.RESP_CODE = source.RESP_CODE
+                        FROM {CommonMethods.LocalSchema} target
+                        INNER JOIN #RecheckUpdates source
+                            ON target.TRANSACTION_LOG_ID =
+                               source.TRANSACTION_LOG_ID;
+
+                        UPDATE target
+                        SET target.RESP_CODE = source.RESP_CODE
+                        FROM {CommonMethods.LocalHistorySchema} target
+                        INNER JOIN #RecheckUpdates source
+                            ON target.TRANSACTION_LOG_ID =
+                               source.TRANSACTION_LOG_ID
+                        WHERE target.TIME_LOC_TRAN_DT >=
+                              DATEADD(HOUR, -2, GETDATE());";
+
+                            using (SqlCommand command = new SqlCommand(
+                                updateQuery, connection, transaction))
+                            {
+                                command.CommandTimeout = 0;
+                                await command.ExecuteNonQueryAsync();
+                            }
+
+                            const string deleteQuery = @"
+                        DELETE target
+                        FROM Recheck_OnResponse target
+                        INNER JOIN #RecheckUpdates source
+                            ON target.TRXLOGID =
+                               source.TRANSACTION_LOG_ID;";
+
+                            using (SqlCommand command = new SqlCommand(
+                                deleteQuery, connection, transaction))
+                            {
+                                command.CommandTimeout = 0;
+                                await command.ExecuteNonQueryAsync();
+                            }
+
+                            transaction.Commit();
+                            Logger.Simple(
+                                $"Rechecked transactions updated: {updates.Rows.Count}");
+                        }
+                        catch
+                        {
+                            transaction.Rollback();
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex, "UpdateRecheckedTransactions");
+                throw;
+            }
+        }
+
+        public async Task InsertRecheckData(DataTable transactions)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("TRXLOGID", typeof(long));
+            table.Columns.Add("TRX_DATETIME", typeof(DateTime));
+            table.Columns.Add("RESP_CODE", typeof(string));
+
+            foreach (DataRow transaction in transactions.Rows)
+            {
+                DataRow row = table.NewRow();
+
+                row["TRXLOGID"] =
+                    Convert.ToInt64(transaction["TRANSACTION_LOG_ID"]);
+
+                row["TRX_DATETIME"] =
+                    Convert.ToDateTime(transaction["TIME_LOC_TRAN_DT"]);
+
+                row["RESP_CODE"] =
+                    transaction["RESP_CODE"] == DBNull.Value
+                        ? DBNull.Value
+                        : transaction["RESP_CODE"].ToString();
+
+                table.Rows.Add(row);
+            }
+
+            try
+            {
+                using (SqlConnection connection =
+                       new SqlConnection(DefaultConnection))
+                {
+                    await connection.OpenAsync();
+
+                    using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
+                    {
+                        bulkCopy.DestinationTableName = "Recheck_OnResponsePaysys";
+                        bulkCopy.BatchSize = 5000;
+                        bulkCopy.BulkCopyTimeout = 0;
+
+                        bulkCopy.ColumnMappings.Add("TRXLOGID", "TRXLOGID");
+                        bulkCopy.ColumnMappings.Add(
+                            "TRX_DATETIME", "TRX_DATETIME");
+                        bulkCopy.ColumnMappings.Add("RESP_CODE", "RESP_CODE");
+
+                        await bulkCopy.WriteToServerAsync(table);
+                    }
+                }
+
+                Logger.Simple(
+                    $"New recheck transactions inserted: {table.Rows.Count}");
+            }
+            catch (Exception ex)
+            {
+                Logger.LogException(ex, "InsertRecheckData");
+                throw;
+            }
+        }
+
+
     }
 }

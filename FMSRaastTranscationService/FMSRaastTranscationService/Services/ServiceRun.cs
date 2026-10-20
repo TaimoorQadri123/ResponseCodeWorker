@@ -31,6 +31,9 @@ namespace FMSRaastTranscationService.Services
         public List<RuleViewModel> RaastRules = new List<RuleViewModel>();
         public List<Parameter> Parameters = new List<Parameter>();
 
+        //new code 
+        public static bool EnableRecheck { get; set; } = false;
+
         // Last row pulled from Oracle (before validation), so failed rows are not re-fetched every cycle
         private string? last_fetched_trxlogid;
         private string? last_fetched_time;
@@ -79,13 +82,19 @@ namespace FMSRaastTranscationService.Services
 
                 Logger.Simple("Fetching Modify Points...");
                 ModifyPoints modifiedPoints = _commonMethods.GetModifiedPoints();
-                this.previous_datetime = modifiedPoints.ModifiedOn.ToString("yyyy-MM-dd HH:mm:ss");
-                this.previous_trxlogid = modifiedPoints.TrxLogId2;
+                this.previous_datetime =DateTime.Now.ToString();
+                //this.previous_datetime = modifiedPoints.ModifiedOn.ToString("yyyy-MM-dd HH:mm:ss");
+                this.previous_trxlogid = 10.ToString();
+                //this.previous_trxlogid = modifiedPoints.TrxLogId2;
+
+                //end
                 Logger.Simple($"Previous Modify Point Found | DateTime : {this.previous_datetime} | TrxLogId2 : {this.previous_trxlogid}");
 
                 if (!modifiedPoints.IsSeeded)
                 {
                     Logger.Simple("System Not Seeded. Loading Transactions...");
+                    //Logger.Simple($"ModifiedOn: {modifiedPoints.ModifiedOn:O}");
+                    //Logger.Simple($"Previous DateTime: {this.previous_datetime}");
                     completeTrans = GetDataSetFullTrans();
                     Logger.Simple($"Transactions Fetched : {completeTrans.Rows.Count}");
                 }
@@ -94,6 +103,7 @@ namespace FMSRaastTranscationService.Services
                 latestTrans = GetDataSetLatestTrans();
                 Logger.Simple($"Latest Transactions Fetched : {latestTrans.Rows.Count}");
 
+               
                 if (this.completeTrans.Rows.Count >= 1)
                 {
                     UpdateModifyPointsFromLastFetched();
@@ -126,6 +136,7 @@ namespace FMSRaastTranscationService.Services
                 Logger.Simple($"=============== Cycle Completed At : {DateTime.Now} ===========================");
                 Logger.Simple("");
             }
+            //yahan error araha hy 
             catch (Exception ex)
             {
                 Logger.LogException(ex, "StartServices");
@@ -138,7 +149,7 @@ namespace FMSRaastTranscationService.Services
                 Logger.EndCycle();
             }
         }
-
+    
         private void UpdateModifyPointsFromLastFetched()
         {
             if (this.last_fetched_trxlogid == null || this.last_fetched_trxlogid == previous_trxlogid)
@@ -209,6 +220,7 @@ namespace FMSRaastTranscationService.Services
                 throw e;
             }
         }
+        //---
 
         private DataTable GetDataSetLatestTrans()
         {
@@ -347,7 +359,7 @@ namespace FMSRaastTranscationService.Services
                     str += parameter.ParameterName + ", ";
             }
             if (str.Length > 0)
-                str = str.Remove(str.Length - 2);
+                str = str.Remove(str.Length - 2);   
             return str;
         }
     }
